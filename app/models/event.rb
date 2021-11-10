@@ -3,8 +3,6 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :users, througth: :attendances
   
-  validates :start_date, presence: true, unless Chronic.parse(from_date)
-  errors.add(:from_date, "is missing or invalid")
 
   validates :duration, presence: true
   validates :title, presence: true, length: { in: 5..140 }
