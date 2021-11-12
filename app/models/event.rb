@@ -11,7 +11,7 @@ class Event < ApplicationRecord
   validates :location, presence: true
   validate :duration_valid?
   validate :past?
-
+  
 
   private
 
